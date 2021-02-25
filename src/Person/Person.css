@@ -1,7 +1,25 @@
-p {
-    color: red;
+
+.container-person{
+    background-color: rgb(221, 118, 118);
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container{
-    border: 1px solid black;
+.person-text{
+    font-size: 1.3rem;
+    color: black;
+    margin-top: 2rem;
+    text-transform: uppercase;
 }
+
+
+span{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin: 0 1rem;
+  }
