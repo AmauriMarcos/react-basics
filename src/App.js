@@ -11,28 +11,84 @@ const App = props => {
       persons: [
         { name: 'Fabricio', age: 43},
         { name: 'Juca', age: 68},
-        { name: 'Carla', age: 16}
-    ]});
+        { name: 'Carla', age: 16}]
+    });
 
-    const changeNameHandler = () =>{
+    const [message, newMessage] = useState("Dont't worry, you get there! Just keep going no matter what.");
+
+    const [gamesState, newGameState] = useState({
+      games: [
+                {name: 'The Last of Us II', quantity: 13},
+                {name: 'God of Us', quantity: 6},
+                {name: 'GTA V', quantity: 18}
+             ]
+         })
+
+    const [carsState, newCarsState] = useState({
+       cars: [
+          {model: 'Corsa D'},
+          {year: 2009},
+          {color: 'Black'}
+       ]
+    });
+
+    const changeNameHandler = (newName) =>{
       setPersonsState({persons: [
         { name: 'Maicon', age: 33},
         { name: 'Eloisa', age: 21},
-        { name: 'Bianca', age: 26}
-      ]})
+        { name: 'Bianca', age: 26},       
+        ]});
+
+      newMessage('Heyyyy');
+      
+      newCarsState({
+        cars: [
+          {model: newName},
+          {year: 2009},
+          {color: 'Black'}
+       ]
+      })
+
+      newGameState({
+        games: [
+          {name: 'Spider Man', quantity: 2},
+          {name: 'God of Us', quantity: 6},
+          {name: 'GTA V', quantity: 18}
+       ]
+      })
    };
+
+   const changeNameInput = (event) =>{
+    setPersonsState({persons: [
+      { name: event.target.value , age: 33},
+      { name: 'Eloisa', age: 21},
+      { name: 'Bianca', age: 26},       
+      ]});
+   }
 
     return(
       <div className="App">
         <h1 className="title-components">Two components</h1>
-        <Person name={personsState.persons[2].name} age={personsState.persons[2].age}></Person>
-        <Animal breed="poodle" age='3'></Animal>
-        <button className="btn" onClick={changeNameHandler}>Change Name</button>
+
+        <Person 
+          model={carsState.cars[0].model} 
+          message={message} 
+          changeName={changeNameInput}
+          name={personsState.persons[0].name} 
+          age={personsState.persons[0].age}>  
+        </Person>
+
+        <Animal
+          gameName={gamesState.games[0].name}
+          gameQtd={gamesState.games[0].quantity}
+          breed="poodle" 
+          age='3'
+          click={changeNameHandler.bind(this, 'Marea!!!')}>
+        </Animal>
+
+        <button className="btn" onClick={ () => changeNameHandler('OPALA')}>Change Name</button>
       </div> 
-    )
-  
+    ) 
 };
   
-
-
 export default App;

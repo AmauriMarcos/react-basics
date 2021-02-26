@@ -5,8 +5,10 @@ const animal = (props) =>{
     return (
         <div className="container">
             <h1>Animal Component</h1>
-            <p className='animal-paragraph'>Breed: {props.breed}</p>
+            <p onClick={props.click} className='animal-paragraph'>Breed: {props.breed}</p>
             <p className='animal-paragraph'>Age: {props.age}</p>
+            <p>{props.gameName}</p>
+            <p>{props.gameQtd}</p>
         </div>
     )
 }
