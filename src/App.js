@@ -51,7 +51,7 @@ const App = props => {
 
       newGameState({
         games: [
-          {name: 'Spider Man', quantity: 2},
+          {name: newName, quantity: 2},
           {name: 'God of Us', quantity: 6},
           {name: 'GTA V', quantity: 18}
        ]
@@ -83,7 +83,7 @@ const App = props => {
           gameQtd={gamesState.games[0].quantity}
           breed="poodle" 
           age='3'
-          click={changeNameHandler.bind(this, 'Marea!!!')}>
+          click={changeNameHandler.bind(this, 'Dragon Ball GT')}>
         </Animal>
 
         <button className="btn" onClick={ () => changeNameHandler('OPALA')}>Change Name</button>
