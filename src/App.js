@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
 import Animal from './Animal/Animal';
+import Navbar from './Navbar/Navbar';
 import { useState } from 'react';
 
 
@@ -68,7 +69,7 @@ const App = props => {
 
     return(
       <div className="App">
-        <h1 className="title-components">Two components</h1>
+        <Navbar></Navbar>
 
         <Person 
           model={carsState.cars[0].model} 

@@ -4,15 +4,6 @@
   grid-template-columns: repeat(2,1fr);
 }
 
-.title-components{
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-
-}
 
 .btn{
   padding: 1rem 1.3rem;
